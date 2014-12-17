@@ -7,19 +7,21 @@ public class GameUtils {
 
     /**
      * Set the tile on a specified position in the gameboard.
-     *
+     * @param g
+     *            The gameboard represented by a two dimensional GameTile array
      * @param pos
      *            The position in the gameboard matrix.
      * @param tile
      *            The type of tile to paint in specified position
      */
-    protected static void setGameboardState(final Position pos, final GameTile tile) {
-        setGameboardState(pos.getX(), pos.getY(), tile);
+    protected static void setGameboardState(GameTile[][] g, final Position pos, final GameTile tile) {
+        setGameboardState(g, pos.getX(), pos.getY(), tile);
     }
 
     /**
      * Set the tile on a specified position in the gameboard.
-     *
+     * @param gameboard
+     *            The gameboard represented by a two dimensional GameTile array
      * @param x
      *            Coordinate in the gameboard matrix.
      * @param y
@@ -27,9 +29,9 @@ public class GameUtils {
      * @param tile
      *            The type of tile to paint in specified position
      */
-    protected static void setGameboardState(GameTile[][] gameBoardState, final int x, final int y,
+    protected static void setGameboardState(GameTile[][] gameboard, final int x, final int y,
                                      final GameTile tile) {
-        gameboardState[x][y] = tile;
+        gameboard[x][y] = tile;
     }
 
 }
